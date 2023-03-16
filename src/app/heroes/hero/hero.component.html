@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            Nombre:
+        </div>
+        <div class="col-12">
+            <h2 class="fw-bold">{{ name }}</h2>
+        </div>
+        <div class="col-12">
+            Edad:
+        </div>
+        <div class="col-12">
+            <h2 class="fw-bold">{{ age }}</h2>
+        </div>
+        <div class="col-12">
+            Metodo:
+        </div>
+        <div class="col-12">
+            <h2 class="fw-bold">{{ getHeroDescription() }}</h2>
+        </div>
+        <div class="col-12">
+            Capitalizado:
+        </div>
+        <div class="col-12">
+            <h2 class="fw-bold">{{ capitalizedName }}</h2>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <button class="btn btn-primary m-2" type="button" (click)="changeHero('capitan america')">Cambiar nombre</button>
+        <button class="btn btn-primary m-2" type="button" (click)="changeAge(25)">Cambiar edad</button>
+    </div>
+</div>
