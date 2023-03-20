@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Character } from './../../interfaces/character';
 
 @Component({
@@ -6,9 +6,22 @@ import { Character } from './../../interfaces/character';
   templateUrl: './add-character.component.html',
   styleUrls: ['./add-character.component.css']
 })
-export class AddCharacterComponent {
-  public character: Character = {
-    name: '',
-    power:0,
+export class AddCharacterComponent implements OnInit {
+  public character!: Character
+
+  @Output()
+  public onNewCharacter: EventEmitter<Character> = new EventEmitter();
+
+  ngOnInit(): void {
+    this.initCharacter();  
+  }
+
+  initCharacter(): void{
+    this.character = { name: '', power:0, }
+  }
+
+  emitCharacter(){
+    this.onNewCharacter.emit(this.character);
+    this.initCharacter(); 
   }
 }
